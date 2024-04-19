@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 align="center">Text Spinner Tool</h1>
+<form method="POST" align="center">
+    <textarea style="width: 550px; height: 200px; color:black;" name="text"></textarea>
+    <select name="level">
+        <option value="words">words</option>
+        <option value="sentences">sentences</option>
+        <option value="paragraphs">paragraphs</option>
+        <option value="characters">characters</option>
+    </select>
+    <input type="submit" value="Randomize">
+</form>
+
+{% if randomized %}
+<h2 align="center">Random Text</h2>
+<form method="GET" align="center">
+    <textarea style="width: 550px; height: 200px; color:rgb(87, 57, 57);" name="text"  >Randomized Text: {{ randomized.randomized }}</textarea>
+</form>
+{% endif %}
+{% endblock %}

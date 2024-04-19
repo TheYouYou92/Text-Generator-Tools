@@ -1,0 +1,15 @@
+<!-- templates/text_summarizer.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h1 align="center">Text Summarizer</h1>
+<form method="POST" align="center">
+    <textarea name="text"></textarea>
+    <input type="submit" value="Summarize">
+</form>
+
+{% if summary %}
+    <h2 align="center">Summary</h2>
+    <p align="center">{{ summary }}</p>
+{% endif %}
+{% endblock %}

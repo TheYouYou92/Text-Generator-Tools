@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 align="center">Text Spinner Tool</h1>
+<form method="POST" align="center">
+    <textarea name="text"></textarea>
+    <input type="submit" value="Spin">
+</form>
+
+{% if spinner %}
+<h2 align="center">Spinned Text</h2>
+
+    <h2 align="center">Spun Text: {{ spinner.spun_text }}</h2>
+
+{% endif %}
+{% endblock %}

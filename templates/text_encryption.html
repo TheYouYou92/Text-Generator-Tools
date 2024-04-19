@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 align="center">Text Encryption</h1>
+<form method="POST" align="center">
+    <textarea name="text"></textarea>
+    <select name="method">
+        <option value="aes">AES</option>
+        <option value="rsa">RSA</option>
+        <option value="des">DES</option>
+        <!-- Add more options as needed -->
+    </select>
+    <select name="action">
+        <option value="encrypt">Encrypt</option>
+        <option value="decrypt">Decrypt</option>
+    </select>
+    <input type="submit" value="Submit">
+</form>
+
+{% if result %}
+    <h2 align="center">Result</h2>
+    <p align="center">{{ result }}</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 align="center">Text Generator</h1>
+<form method="POST" align="center">
+    <select name="source">
+        <option value="lorem_ipsum">Lorem Ipsum</option>
+        <option value="random_words">Random Words</option>
+        <option value="random_sentences">Random Sentences</option>
+        <option value="random_paragraphs">Random Paragraphs</option>
+        <!-- Add more options as needed -->
+    </select>
+    <input type="submit" value="Generate">
+</form>
+
+{% if text %}
+    <h2 align="center">Generated Text</h2>
+    <p align="center">{{ text }}</p>
+{% endif %}
+{% endblock %}

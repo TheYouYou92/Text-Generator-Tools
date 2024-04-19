@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 align="center">Text Formatter</h1>
+<form method="POST" align="center">
+    <textarea name="text"></textarea>
+    <select name="format">
+        <option value="json">JSON</option>
+        <option value="xml">XML</option>
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <!-- Add more options as needed -->
+    </select>
+    <select name="action">
+        <option value="beautify">Beautify</option>
+        <option value="minify">Minify</option>
+        <option value="validate">Validate</option>
+        <option value="convert">Convert</option>
+    </select>
+    <input type="submit" value="Format">
+</form>
+
+{% if formatted_text %}
+    <h2 align="center">Formatted Text</h2>
+    <pre align="center">{{ formatted_text }}</pre>
+{% endif %}
+{% endblock %}

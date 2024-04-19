@@ -1,0 +1,43 @@
+<!-- templates/text_compare.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h1 align="center">Text Compare</h1>
+<form method="POST" align="center">
+    <textarea name="text1"></textarea>
+    <textarea name="text2"></textarea>
+    <input type="submit" value="Compare">
+</form>
+
+{% if differences %}
+    <h2 align="center">Differences</h2>
+    <h3 align="center">Line Differences</h3>
+    <ul>
+    {% for difference in differences.line_differences %}
+        <li>{{ difference }}</li>
+    {% endfor %}
+    </ul>
+    <h3 align="center">Word Frequency Differences</h3>
+    <ul>
+    {% for word, freq in differences.word_freq_differences.text1.items() %}
+        <li>{{ word }}: {{ freq }}</li>
+    {% endfor %}
+    </ul>
+    <ul>
+    {% for word, freq in differences.word_freq_differences.text2.items() %}
+        <li>{{ word }}: {{ freq }}</li>
+    {% endfor %}
+    </ul>
+    <h3 align="center">Character Frequency Differences</h3>
+    <ul>
+    {% for char, freq in differences.char_freq_differences.text1.items() %}
+        <li>{{ char }}: {{ freq }}</li>
+    {% endfor %}
+    </ul>
+    <ul>
+    {% for char, freq in differences.char_freq_differences.text2.items() %}
+        <li>{{ char }}: {{ freq }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="form-group">
+            <form method="POST">
+                <label for="text">Enter text:</label><br>
+                <input type="text" id="text" name="text"><br>
+                <input type="submit" value="Shuffle">
+            </form>
+        </div>
+        <div class="result-group">
+            {% if shuffled_text %}
+                <p>Shuffled text: {{ shuffled_text }}</p>
+            {% endif %}
+            {% if error %}
+                <p>Error: {{ error }}</p>
+            {% endif %}
+        </div>
+    </div>
+    {% endblock content %}

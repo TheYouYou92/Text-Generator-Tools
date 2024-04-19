@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 align="center">Text Analysis Tool</h1>
+<form method="POST" align="center">
+    <textarea name="text"></textarea>
+    <input type="submit" value="Analyze">
+</form>
+
+{% if analysis %}
+<h2 align="center">Analysis Results</h2>
+<ul>
+    <li>Word Count: {{ analysis.word_count }}</li>
+    <li>Keyword Density: {{ analysis.keyword_density }}</li>
+    <li>Readability: {{ analysis.readability }}</li>
+    <li>Sentiment: {{ analysis.sentiment }}</li>
+    <li>Grammar: {{ analysis.grammar }}</li>
+</ul>
+{% endif %}
+{% endblock %}
