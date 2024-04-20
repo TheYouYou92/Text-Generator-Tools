@@ -165,3 +165,6 @@ Werkzeug==3.0.1
 win-inet-pton @ file:///C:/ci_311/win_inet_pton_1676425458225/work
 wsproto==1.2.0
 zope.interface==6.1
+defusedxml==0.7.1 \
+    --hash=sha256:a352e7e428770286cc899e2542b6cdaedb2b4953ff269a210103ec58f6198a61
+    --hash=sha256:1bb3032db185915b62d7c6209c5a8792be6a32ab2fedacc84e01b52c51aa3e69
