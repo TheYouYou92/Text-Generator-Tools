@@ -1,4 +1,4 @@
-import random
+import secrets
 
 def randomize_text(text: str, level: str) -> str:
     """
@@ -28,7 +28,7 @@ def randomize_text(text: str, level: str) -> str:
 
     if level == 'words':
         # Randomizing the order of words
-        random.shuffle(words)
+        secrets.SystemRandom().shuffle(words)
         randomized_text = ' '.join(words)
 
     elif level == 'sentences':
@@ -36,7 +36,7 @@ def randomize_text(text: str, level: str) -> str:
         sentences = text.split('. ')
 
         # Randomizing the order of sentences
-        random.shuffle(sentences)
+        secrets.SystemRandom().shuffle(sentences)
         randomized_text = '. '.join(sentences)
 
     elif level == 'paragraphs':
@@ -44,7 +44,7 @@ def randomize_text(text: str, level: str) -> str:
         paragraphs = text.split('\n\n')
 
         # Randomizing the order of paragraphs
-        random.shuffle(paragraphs)
+        secrets.SystemRandom().shuffle(paragraphs)
         randomized_text = '\n\n'.join(paragraphs)
 
     elif level == 'characters':
@@ -55,7 +55,7 @@ def randomize_text(text: str, level: str) -> str:
             characters = list(word)
 
             # Randomizing the order of characters
-            random.shuffle(characters)
+            secrets.SystemRandom().shuffle(characters)
 
             # Joining the characters back into a word
             randomized_word = ''.join(characters)
