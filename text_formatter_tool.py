@@ -3,6 +3,7 @@ import json
 import xml.dom.minidom
 from html.parser import HTMLParser
 from css_html_js_minify import process_single_html_file, process_single_css_file
+import defusedxml.minidom
 
 class MyHTMLParser(HTMLParser):
     def handle_starttag(self, tag, attrs):
@@ -28,12 +29,12 @@ def format(text, format, action):
                 return 'Invalid JSON'
     elif format == 'xml':
         if action == 'beautify':
-            return xml.dom.minidom.parseString(text).toprettyxml()
+            return defusedxml.minidom.parseString(text).toprettyxml()
         elif action == 'minify':
-            return xml.dom.minidom.parseString(text).toxml()
+            return defusedxml.minidom.parseString(text).toxml()
         elif action == 'validate':
             try:
-                xml.dom.minidom.parseString(text)
+                defusedxml.minidom.parseString(text)
                 return 'Valid XML'
             except xml.parsers.expat.ExpatError:
                 return 'Invalid XML'
