@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request,redirect,flash
 import text_analysis_tool, text_generator_tool, text_encryption_tool, text_formatter_tool, text_compare_tool,text_randomizer,text_summarizer_tool, text_spinner
-import random
+import secrets
+
 app = Flask(__name__)
 app.secret_key = "dfsdfsdfsfsdfs"
 @app.route('/')
@@ -67,7 +68,7 @@ def text_shuffler():
     if request.method == 'POST':
         text = request.form.get('text')
         try:
-            shuffled_text = ''.join(random.sample(text, len(text)))
+            shuffled_text = ''.join(secrets.SystemRandom().sample(text, len(text)))
             return render_template('text_shuffler.html', shuffled_text=shuffled_text)
         except ValueError:
             return render_template('text_shuffler.html', error="Invalid input. Please enter a string.")
