@@ -1,5 +1,5 @@
-import random
 from nltk.corpus import wordnet
+import secrets
  
 def text_spinner(text):
     """
@@ -32,7 +32,7 @@ def text_spinner(text):
         synonyms = wordnet.synsets(word)
         if synonyms:
             # Choosing a random synonym for the word
-            synonym = random.choice(synonyms).lemmas()[0].name()
+            synonym = secrets.choice(synonyms).lemmas()[0].name()
             spun_words.append(synonym)
         else:
             spun_words.append(word)
