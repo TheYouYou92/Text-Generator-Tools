@@ -165,3 +165,4 @@ Werkzeug==3.0.1
 win-inet-pton @ file:///C:/ci_311/win_inet_pton_1676425458225/work
 wsproto==1.2.0
 zope.interface==6.1
+defusedxml==0.7.1
